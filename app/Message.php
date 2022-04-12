@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Comment; // 追加
 
 class Message extends Model
 {
-
-// 入力チェック
+     // 入力チェック
     public function validate(){
         
          // エラー配列を空で作成
@@ -34,4 +34,9 @@ class Message extends Model
         return $errors;
     }
     
+    // この投稿に紐づくコメント一覧を取得するメソッド
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
