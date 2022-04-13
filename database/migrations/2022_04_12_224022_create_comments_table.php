@@ -27,6 +27,7 @@ class CreateCommentsTable extends Migration
                     ->on('messages')
                     ->onDelete('cascade');
         });
+         
     }
 
     /**
